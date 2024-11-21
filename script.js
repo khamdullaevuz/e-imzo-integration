@@ -1,7 +1,7 @@
 let key = "";
 
 document.getElementById("key").addEventListener("input", function () {
-  key = this.value;
+  key = btoa(this.value);
 });
 
 var ws = new WebSocket("wss://127.0.0.1:64443/service/cryptapi");
