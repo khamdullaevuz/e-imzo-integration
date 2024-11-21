@@ -24,7 +24,9 @@ ws.onmessage = function (evt) {
     certificates.forEach((certificate, key) => {
       let option = document.createElement("option");
       option.value = key;
-      option.text = certificate.name;
+      let alias = certificate.alias;
+      let full_name = alias.match(/cn=([^,]+)/i)[1];
+      option.text = full_name.toUpperCase();
       select.appendChild(option);
     });
   }
