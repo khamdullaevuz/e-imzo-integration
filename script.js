@@ -42,7 +42,7 @@ ws.onmessage = function (evt) {
   }
 
   if (data?.pkcs7_64) {
-    console.log(data.pkcs7_64);
+    document.getElementById("result").value = data.pkcs7_64;
   }
 };
 
